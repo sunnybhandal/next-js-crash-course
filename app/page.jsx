@@ -3,9 +3,9 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="">
       <h1>Welcome to Sunny Media</h1>
-      <ul>
+      <ul className="flex">
         <li>
           <Link href="/">Home</Link>
         </li>
