@@ -2,7 +2,10 @@ import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
 async function fetchRepo(name) {
   const response = await fetch(
-    `https://api.github.com/repos/sunnybhandal/${name}`
+    `https://api.github.com/repos/sunnybhandal/${name}`,
+    {
+      next: { revalidate: 60 },
+    }
   );
 
   const repo = await response.json();
