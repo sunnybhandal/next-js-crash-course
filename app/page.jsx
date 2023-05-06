@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import LoadingPage from "./loading";
 import Courses from "./components/Courses";
+import { CourseSearch } from "./components/CourseSearch";
 
 export default function HomePage() {
   const [courses, setCourses] = useState([]);
@@ -25,7 +26,8 @@ export default function HomePage() {
   return (
     <>
       <h1>Welcome to Sunny Media</h1>
-      {/* <Courses /> */}
+      <CourseSearch getSearchResults={(results) => setCourses(results)} />
+      <Courses courses={courses} />
     </>
   );
 }
